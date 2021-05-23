@@ -7,9 +7,9 @@ class CalendarsController < ApplicationController
   end
 
   # 予定の保存
-  def Create
+  def create
     Plan.Create(plan_params)
-    redirect_to action: :Index
+    redirect_to action: :index
   end
 
   private
@@ -34,7 +34,7 @@ class CalendarsController < ApplicationController
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
-      days = { :month =&gt; (@todays_date + x).month, :date =&gt; (@todays_date+x).day, :plans =&gt; today_plans}Write<br class="Apple-interchange-newline">
+      days = {month:(@todays_date + x).month, date:(@todays_date+x).day, plans:today_plans}Write<br class="Apple-interchange-newline">
       @week_days.push(days)
     end
 
